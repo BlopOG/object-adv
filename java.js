@@ -117,3 +117,34 @@ frank.inventory.push("small hat", "sunglasses");
 // Chain companions
 robin.companion = leo;
 leo.companion = frank;
+
+console.log("PART 5: ADVENTURER FACTORY ");
+
+class AdventurerFactory {
+  constructor(role) {
+    this.role = role;
+    this.adventurers = [];
+  }
+
+  generate(name) {
+    const newAdventurer = new Adventurer(name, this.role);
+    this.adventurers.push(newAdventurer);
+    return newAdventurer;
+  }
+
+  findByIndex(index) {
+    return this.adventurers[index];
+  }
+
+  findByName(name) {
+    return this.adventurers.find((a) => a.name === name);
+  }
+}
+
+const healerFactory = new AdventurerFactory("Healer");
+const wizardFactory = new AdventurerFactory("Wizard");
+
+const elena = healerFactory.generate("Elena");
+const gandalf = wizardFactory.generate("Gandalf");
+
+console.log("Generated Healers:", healerFactory.adventurers);
