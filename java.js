@@ -148,3 +148,11 @@ const elena = healerFactory.generate("Elena");
 const gandalf = wizardFactory.generate("Gandalf");
 
 console.log("Generated Healers:", healerFactory.adventurers);
+console.log("\n=== PART 7: ADVENTURE FORTH ===");
+
+robin.scout();
+robin.companion.assist();
+robin.companion.companion.roll();
+
+
+robin.duel(elena);
